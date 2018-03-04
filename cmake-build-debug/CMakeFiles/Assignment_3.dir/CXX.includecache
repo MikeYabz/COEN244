@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/micya/CLionProjects/Assignment 3/Car.cpp
+Car.h
+C:/Users/micya/CLionProjects/Assignment 3/Car.h
+
+C:/Users/micya/CLionProjects/Assignment 3/Car.h
+iostream
+C:/Users/micya/CLionProjects/Assignment 3/iostream
+
+C:/Users/micya/CLionProjects/Assignment 3/CarRentalManagemen.cpp
+CarRentalManagemen.h
+C:/Users/micya/CLionProjects/Assignment 3/CarRentalManagemen.h
+
+C:/Users/micya/CLionProjects/Assignment 3/CarRentalManagemen.h
+
+C:/Users/micya/CLionProjects/Assignment 3/Customer.cpp
+Customer.h
+C:/Users/micya/CLionProjects/Assignment 3/Customer.h
+
+C:/Users/micya/CLionProjects/Assignment 3/Customer.h
+Car.h
+C:/Users/micya/CLionProjects/Assignment 3/Car.h
+
+C:/Users/micya/CLionProjects/Assignment 3/main.cpp
+iostream
+-
+Car.h
+C:/Users/micya/CLionProjects/Assignment 3/Car.h
+
