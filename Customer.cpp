@@ -1,14 +1,16 @@
 #include "Customer.h"
 
-    //Constructors
+#include <iostream>
+
+//Constructors
 Customer::Customer()
 {
     customerNumber = 0;
-    name = "NULL";
-    address = "NULL";
-    telephoneNumber = "NULL";
-    companyName = "NULL";
-    companyAddress = "NULL";
+    name = "";
+    address = "";
+    telephoneNumber = "";
+    companyName = "";
+    companyAddress = "";
     customerType = Regular;
 }
 Customer::~Customer()
@@ -16,7 +18,7 @@ Customer::~Customer()
     std::cout<<"Customer Entry Deleted\n";
 }
 
-    //Get and Set Functions
+//Get and Set Functions
 int Customer::getCustomerNumber()
 {
     return customerNumber;
@@ -43,9 +45,9 @@ std::string Customer::getCompanyAddress()
 }
 std::string Customer::getCustomerType()
 {
-    if (customerType == 0) return "Regular";
-    else if (customerType == 1) return "Corporate";
-    else if (customerType == 2) return "VIP";
+    if (customerType == Regular) return "Regular";
+    else if (customerType == Corporate) return "Corporate";
+    else if (customerType == VIP) return "VIP";
 }
 void Customer::setCustomerNumber(int inputCustomerNumber)
 {
@@ -71,7 +73,7 @@ void Customer::setCompanyAddress(std::string inputCompanyAddress)
 {
     companyAddress = inputCompanyAddress;
 }
-void Customer::setCustomerType(Customer_Types inputCustomerType)
+void Customer::setCustomerType(CustomerType inputCustomerType)
 {
     customerType = inputCustomerType;
 }

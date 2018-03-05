@@ -1,6 +1,8 @@
 #include "Car.h"
 
-    //Constructors
+#include <iostream>
+
+//Constructors
 Car::Car ()
 {
     id = 0;
@@ -16,7 +18,7 @@ Car::~Car()
     std::cout<<"Car Entry Deleted\n";
 }
 
-    //Get and Set Functions
+//Get and Set Functions
 int Car::getId()
 {
     return id;
