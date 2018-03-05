@@ -1,8 +1,6 @@
 #include "Customer.h"
 
-#include <iostream>
-
-//Constructors
+    //Constructors
 Customer::Customer()
 {
     customerNumber = 0;
@@ -11,14 +9,18 @@ Customer::Customer()
     telephoneNumber = "";
     companyName = "";
     companyAddress = "";
-    customerType = Regular;
+    setCustomerType(Regular);
+    customerRental = false;
+    vipMax = 45;
+    corporateMax = 35;
+    regularMax = 25;
 }
 Customer::~Customer()
 {
     std::cout<<"Customer Entry Deleted\n";
 }
 
-//Get and Set Functions
+    //Get and Set Functions
 int Customer::getCustomerNumber()
 {
     return customerNumber;
@@ -45,10 +47,15 @@ std::string Customer::getCompanyAddress()
 }
 std::string Customer::getCustomerType()
 {
-    if (customerType == Regular) return "Regular";
-    else if (customerType == Corporate) return "Corporate";
-    else if (customerType == VIP) return "VIP";
+    if (customerType == 0) return "Regular";
+    else if (customerType == 1) return "Corporate";
+    else if (customerType == 2) return "VIP";
 }
+bool Customer::getCustomerRental()
+{
+    return customerRental;
+}
+
 void Customer::setCustomerNumber(int inputCustomerNumber)
 {
     customerNumber = inputCustomerNumber;
@@ -73,7 +80,27 @@ void Customer::setCompanyAddress(std::string inputCompanyAddress)
 {
     companyAddress = inputCompanyAddress;
 }
-void Customer::setCustomerType(CustomerType inputCustomerType)
+void Customer::setCustomerType(Customer_Types inputCustomerType)
 {
     customerType = inputCustomerType;
+    if (customerType == 0) maxRentalPeriod = regularMax;
+    else if (customerType == 1) maxRentalPeriod = corporateMax;
+    else if (customerType == 2) maxRentalPeriod = vipMax;
+}
+void Customer::setCustomerRental(bool inputCustomerRental)
+{
+    customerRental = inputCustomerRental;
+}
+void Customer::setRental(Car *car)
+{
+    if ((customerType == 0) && (car->getType() == 1)) //
+    {
+        std::cout<<"Error: Regular Customers Can't Rent Luxury Cars\n";
+    }
+    else
+    {
+        rentedCar = car;
+        customerRental = true;
+        car->setCarRented(true);
+    }
 }

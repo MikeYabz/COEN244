@@ -1,18 +1,26 @@
-#include <string>
+#include <iostream>
+
+enum Car_Types
+{
+    Standard = 0,
+    Luxury = 1
+};
 
 class Car
 {
 private:
     int id;
-    std::string type;
+    Car_Types type;
+    bool carRented;
 public:
-    //Constructors
+        //Constructors
     Car ();
-    Car (int inputId, std::string inputType);
     ~Car();
-    //Get and Set Functions
+        //Get and Set Functions
     int getId();
-    std::string getType();
+    Car_Types getType();
+    bool getCarRented();
     void setId(int inputId);
-    void setType(std::string inputType);
+    void setType(Car_Types inputType);
+    void setCarRented(bool inputCarRented);
 };

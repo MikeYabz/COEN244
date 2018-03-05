@@ -1,44 +1,39 @@
 #include "Car.h"
 
-#include <iostream>
-
-//Constructors
+    //Constructors
 Car::Car ()
 {
     id = 0;
-    type = "Standard";
-}
-Car::Car (int inputId, std::string inputType)
-{
-    id = inputId;
-    type = inputType;
+    type = Standard;
+    carRented = false;
 }
 Car::~Car()
 {
     std::cout<<"Car Entry Deleted\n";
 }
 
-//Get and Set Functions
+    //Get and Set Functions
 int Car::getId()
 {
     return id;
 }
-std::string Car::getType()
+Car_Types Car::getType()
 {
     return type;
 }
+bool Car::getCarRented()
+{
+    return carRented;
+}
 void Car::setId(int inputId)
 {
-    inputId = id;
+    id = inputId;
 }
-void Car::setType(std::string inputType)
+void Car::setType(Car_Types inputType)
 {
-    if (inputType == "Standard" || inputType == "Luxury")
-    {
-        type = inputType;
-    }
-    else
-    {
-        std::cout<<"Invalid car type\n";
-    }
+   type = inputType;
+}
+void Car::setCarRented(bool inputCarRented)
+{
+    carRented = inputCarRented;
 }

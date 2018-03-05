@@ -1,13 +1,13 @@
 #include "Car.h"
 
-enum CustomerType
+enum Customer_Types
 {
     Regular = 0,
     Corporate = 1,
-    VIP = 2
+    VIP = 2,
 };
 
-class Customer : public Car
+class Customer
 {
 private:
     int customerNumber;
@@ -18,12 +18,17 @@ private:
     std::string companyAddress;
     Car *rentedCar;
     int maxRentalPeriod;
-    CustomerType customerType;
+    Customer_Types customerType;
+    bool customerRental;
+    int vipMax;
+    int regularMax;
+    int corporateMax;
 public:
-    //Constructors
+        //Constructors
     Customer();
     ~Customer();
-    //Get and Set Functions
+
+        //Get and Set Functions
     int getCustomerNumber();
     std::string getName();
     std::string getAddress();
@@ -31,13 +36,14 @@ public:
     std::string getCompanyName();
     std::string getCompanyAddress();
     std::string getCustomerType();
+    bool getCustomerRental();
     void setCustomerNumber(int inputCustomerNumber);
     void setName(std::string inputName);
     void setAddress(std::string inputAddress);
     void setTelephoneNumber(std::string inputTelephoneNumber);
     void setCompanyName(std::string inputCompanyName);
     void setCompanyAddress(std::string inputCompanyAddress);
-    void setCustomerType(CustomerType inputCustomerType);
-    //Other Functions
-    //void
+    void setCustomerType(Customer_Types inputCustomerType);
+    void setCustomerRental(bool inputCustomerRental);
+    void setRental(Car *car);
 };
