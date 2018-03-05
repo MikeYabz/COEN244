@@ -3,4 +3,4 @@ project(Assignment_3)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Assignment_3 main.cpp Car.cpp Car.h Customer.cpp Customer.h CarRentalManagemen.cpp CarRentalManagemen.h)
+add_executable(Assignment_3 main.cpp Car.cpp Car.h Customer.cpp Customer.h CarRentalManagement.cpp CarRentalManagement.h)

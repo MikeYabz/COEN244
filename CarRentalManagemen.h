@@ -1,5 +1,0 @@
-Xclass CarRentalManagemen {
-private:
-public:
-
-};
