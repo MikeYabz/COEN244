@@ -1,0 +1,7 @@
+To keep track of rentals and their return dates, modify the CarRental class to include these fields:
+- Date rentalDate
+- int duration
+
+By looping through the CarRental objects and comparing today's date with (rentalDate + duration days), we could check if the rental is close to expiring or has expired, and take action.
+
+This also lets the company keep track of previous rentals, while allowing it to schedule future rentals.

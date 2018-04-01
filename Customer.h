@@ -1,49 +1,35 @@
-#include "Car.h"
+#include <string>
 
-enum Customer_Types
+#pragma once
+
+enum CustomerType
 {
-    Regular = 0,
-    Corporate = 1,
-    VIP = 2,
+    Regular,
+    Corporate,
+    VIP
 };
 
 class Customer
 {
-private:
-    int customerNumber;
+    int number;
     std::string name;
     std::string address;
-    std::string telephoneNumber;
-    std::string companyName;
-    std::string companyAddress;
-    Car *rentedCar;
-    int maxRentalPeriod;
-    Customer_Types customerType;
-    bool customerRental;
-    int vipMax;
-    int regularMax;
-    int corporateMax;
+    std::string tel;
+    CustomerType type;
+
 public:
-        //Constructors
     Customer();
     ~Customer();
 
-        //Get and Set Functions
-    int getCustomerNumber();
-    std::string getName();
-    std::string getAddress();
-    std::string getTelephoneNumber();
-    std::string getCompanyName();
-    std::string getCompanyAddress();
-    std::string getCustomerType();
-    bool getCustomerRental();
-    void setCustomerNumber(int inputCustomerNumber);
-    void setName(std::string inputName);
-    void setAddress(std::string inputAddress);
-    void setTelephoneNumber(std::string inputTelephoneNumber);
-    void setCompanyName(std::string inputCompanyName);
-    void setCompanyAddress(std::string inputCompanyAddress);
-    void setCustomerType(Customer_Types inputCustomerType);
-    void setCustomerRental(bool inputCustomerRental);
-    void setRental(Car *car);
+    int getNumber() const;
+    std::string getName() const;
+    std::string getAddress() const;
+    std::string getTel() const;
+    CustomerType getType() const;
+
+    void setNumber(int number);
+    void setName(std::string name);
+    void setAddress(std::string address);
+    void setTel(std::string tel);
+    void setType(CustomerType type);
 };

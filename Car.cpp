@@ -1,39 +1,41 @@
-#include "Car.h"
+#include "car.h"
 
-    //Constructors
-Car::Car ()
+Car::Car()
 {
     id = 0;
-    type = Standard;
-    carRented = false;
-}
-Car::~Car()
-{
-    std::cout<<"Car Entry Deleted\n";
+    type = CarType::Standard;
+    rented = false;
 }
 
-    //Get and Set Functions
-int Car::getId()
+Car::~Car()
+{}
+
+int Car::getId() const
 {
     return id;
 }
-Car_Types Car::getType()
+
+CarType Car::getType() const
 {
     return type;
 }
-bool Car::getCarRented()
+
+bool Car::isRented() const
 {
-    return carRented;
+    return rented;
 }
-void Car::setId(int inputId)
+
+void Car::setId(int id)
 {
-    id = inputId;
+    this->id = id;
 }
-void Car::setType(Car_Types inputType)
+
+void Car::setType(CarType type)
 {
-   type = inputType;
+    this->type = type;
 }
-void Car::setCarRented(bool inputCarRented)
+
+void Car::setRented(bool rented)
 {
-    carRented = inputCarRented;
+    this->rented = rented;
 }

@@ -1,26 +1,28 @@
-#include <iostream>
+#include <string>
 
-enum Car_Types
+#pragma once
+
+enum class CarType
 {
-    Standard = 0,
-    Luxury = 1
+    Standard,
+    Luxury
 };
 
 class Car
 {
-private:
     int id;
-    Car_Types type;
-    bool carRented;
+    CarType type;
+    bool rented;
+
 public:
-        //Constructors
-    Car ();
+    Car();
     ~Car();
-        //Get and Set Functions
-    int getId();
-    Car_Types getType();
-    bool getCarRented();
-    void setId(int inputId);
-    void setType(Car_Types inputType);
-    void setCarRented(bool inputCarRented);
+
+    int getId() const;
+    CarType getType() const;
+    bool isRented() const;
+
+    void setId(int id);
+    void setType(CarType type);
+    void setRented(bool rented);
 };

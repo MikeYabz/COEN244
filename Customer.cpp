@@ -1,106 +1,63 @@
-#include "Customer.h"
+#include "customer.h"
 
-    //Constructors
 Customer::Customer()
 {
-    customerNumber = 0;
+    number = 0;
     name = "";
     address = "";
-    telephoneNumber = "";
-    companyName = "";
-    companyAddress = "";
-    setCustomerType(Regular);
-    customerRental = false;
-    vipMax = 45;
-    corporateMax = 35;
-    regularMax = 25;
-}
-Customer::~Customer()
-{
-    std::cout<<"Customer Entry Deleted\n";
+    tel = "";
+    type = CustomerType::Regular;
 }
 
-    //Get and Set Functions
-int Customer::getCustomerNumber()
+Customer::~Customer()
+{}
+
+int Customer::getNumber() const
 {
-    return customerNumber;
+    return number;
 }
-std::string Customer::getName()
+
+std::string Customer::getName() const
 {
     return name;
 }
-std::string Customer::getAddress()
+
+std::string Customer::getAddress() const
 {
     return address;
 }
-std::string Customer::getTelephoneNumber()
+
+std::string Customer::getTel() const
 {
-    return telephoneNumber;
-}
-std::string Customer::getCompanyName()
-{
-    return companyName;
-}
-std::string Customer::getCompanyAddress()
-{
-    return companyAddress;
-}
-std::string Customer::getCustomerType()
-{
-    if (customerType == 0) return "Regular";
-    else if (customerType == 1) return "Corporate";
-    else if (customerType == 2) return "VIP";
-}
-bool Customer::getCustomerRental()
-{
-    return customerRental;
+    return tel;
 }
 
-void Customer::setCustomerNumber(int inputCustomerNumber)
+CustomerType Customer::getType() const
 {
-    customerNumber = inputCustomerNumber;
+    return type;
 }
-void Customer::setName(std::string inputName)
+
+void Customer::setNumber(int number)
 {
-    name = inputName;
+    this->number = number;
 }
-void Customer::setAddress(std::string inputAddress)
+
+void Customer::setName(std::string name)
 {
-    address = inputAddress;
+    this->name = name;
 }
-void Customer::setTelephoneNumber(std::string inputTelephoneNumber)
+
+void Customer::setAddress(std::string address)
 {
-    telephoneNumber = inputTelephoneNumber;
+    this->address = address;
 }
-void Customer::setCompanyName(std::string inputCompanyName)
+
+void Customer::setTel(std::string tel)
 {
-    companyName = inputCompanyName;
+    this->tel = tel;
 }
-void Customer::setCompanyAddress(std::string inputCompanyAddress)
+
+void Customer::setType(CustomerType type)
 {
-    companyAddress = inputCompanyAddress;
-}
-void Customer::setCustomerType(Customer_Types inputCustomerType)
-{
-    customerType = inputCustomerType;
-    if (customerType == 0) maxRentalPeriod = regularMax;
-    else if (customerType == 1) maxRentalPeriod = corporateMax;
-    else if (customerType == 2) maxRentalPeriod = vipMax;
-}
-void Customer::setCustomerRental(bool inputCustomerRental)
-{
-    customerRental = inputCustomerRental;
-}
-void Customer::setRental(Car *car)
-{
-    if ((customerType == 0) && (car->getType() == 1)) //
-    {
-        std::cout<<"Error: Regular Customers Can't Rent Luxury Cars\n";
-    }
-    else
-    {
-        rentedCar = car;
-        customerRental = true;
-        car->setCarRented(true);
-    }
+    this->type = type;
 }
